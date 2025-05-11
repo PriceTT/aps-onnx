@@ -1,0 +1,40 @@
+# Converting sklearn UF model to onnx
+
+Test case of a **Linear Regression and DecisionTreeRegressor model** fitted to UF data and converted to onnx to be used in APS.
+
+Key files:
+* **models/uf_LinearRegressor_1.onnx**: works in python but not APS
+* **models/uf_LinearRegressor_2.onnx**: works in python and APS
+* **uf_fitting_onnx.ipynb**: Fit and genrate the onnx model
+* **/data/cuf_data.csv**: Simulated data for fitting.
+
+
+## Setting up your development environment 
+* Install MiniForge https://github.com/conda-forge/miniforge?tab=readme-ov-file
+* install vscode https://code.visualstudio.com/ and extensions  ms-python.vscode-pylance, ms-python.python, ms-toolsai.jupyter
+* install gitbash https://git-scm.com/download/win
+
+
+
+## Set up ENV
+1. Using the terminal clone the repo `git clone `
+2. Navigate to project folder and run the command below to the create conda environment which reads the environment.yml file.
+3. Conda manages the Python virtual environment, while Poetry handles package management. Here are the essential commands:   
+    ``` conda env create ```  
+    * Activate the virtual environment  with
+    ```conda activate onnx-env```
+    * Install the packages using poetry (retry if it fails)
+    ``` poetry install -vvv  ```
+    * To update the packages 
+   ``` poetry update ```
+    * To remove the env
+   ``` conda env remove --name onnx-env ```
+   * The interpreter path can be found by tying  ```which python```
+   * Append the project's virtual env to the jupyter kernels
+   ``` python -m ipykernel install --user --name aps-env --display-name "onnx-env" ```
+
+
+
+
+
+
